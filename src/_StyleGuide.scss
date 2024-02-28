@@ -24,5 +24,16 @@ $fs-footer-link:1rem;
 $clr-primary: rgb(245, 197, 24);
 $clr-secondary: rgb(255, 255, 255);
 $clr-light-blue : rgb(87, 153, 239);
+$clr-input-placeholder: #757575;
 $bg-clr-navbar : rgb(18, 18, 18);
 $bg-clr-card :rgb(26, 26, 26);
+$bg-clr-category-dropdown : rgb(49, 49, 49);
+
+
+
+
+@mixin horizontalFlex() {
+    display: flex;
+    align-items: center;
+  
+}

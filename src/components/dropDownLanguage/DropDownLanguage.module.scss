@@ -1,0 +1,24 @@
+@use "../../StyleGuide" as utility;
+
+.dropDownLanguage {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 240px;
+  border-radius: 4px;
+  background: utility.$bg-clr-category-dropdown;
+  ul {
+    list-style: none;
+  }
+}
+
+.language_dropdown_heading {
+  margin-left: 0.8rem;
+  padding: 1rem 0;
+  font-size: 0.75rem;
+  display: block;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: utility.$font-weight-button;
+  letter-spacing: 3px;
+}
