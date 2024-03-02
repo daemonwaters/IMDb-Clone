@@ -1,14 +1,23 @@
 import React, { useState } from 'react'
 import './Global.scss'
 import Navbar from './components/navbar/Navbar'
+import Menu from './components/Menu/Menu'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [showMenu, setShowMenu] = useState(false)
+
+  const handleMenuDisplay = ()=>{
+    setShowMenu(!showMenu)
+  }
 
   return (
     <React.Fragment>
     <div className="wrapper">
-      <Navbar/>
+      <Navbar handleMenuDisplay={handleMenuDisplay}/>
+      <Menu 
+      handleMenuDisplay={handleMenuDisplay}
+      setShowMenu={setShowMenu}
+      showMenu={showMenu}/>
     </div>
     </React.Fragment>
   )

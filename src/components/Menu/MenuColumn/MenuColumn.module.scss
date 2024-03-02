@@ -1,0 +1,24 @@
+@use "../../../StyleGuide" as utility;
+
+.menu_column{
+    list-style: none;
+}
+
+.menu_heading{
+    display: inline-block;
+    padding: 0.6rem 0;
+    font-size: 1.5rem;
+    font-weight: utility.$font-weight-button;
+    color: #fff;
+}
+
+.menu_row{
+    padding: 0.4rem 0;
+    margin-left: 2rem;
+    text-transform: capitalize;
+    cursor: pointer;
+    color: #fff;
+    &:hover {
+        text-decoration: underline;
+    }
+}
