@@ -1,0 +1,33 @@
+@use "../../StyleGuide" as utility;
+
+.aside_item {
+  cursor: pointer;
+  padding: 0.6rem 0;
+}
+
+.aside_item_heading {
+  @include utility.horizontalFlex();
+  justify-content: space-between;
+  font-weight: utility.$font-weight-button;
+  color: #fff;
+  margin-bottom: 0.6rem;
+  padding: 0 1rem;
+
+  svg {
+    fill: utility.$clr-input-placeholder;
+  }
+}
+
+.aside_item_dropdown {
+  list-style: none;
+  border-bottom: solid 1px utility.$clr-input-placeholder;
+}
+
+.aside_dropdown_item {
+  text-transform: capitalize;
+  padding: 0.4rem 1rem;
+  color: #fff;
+  &:hover {
+    background: rgb(49, 49, 49);
+  }
+}

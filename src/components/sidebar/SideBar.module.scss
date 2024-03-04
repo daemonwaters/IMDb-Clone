@@ -1,0 +1,89 @@
+@use "../../StyleGuide" as utility;
+
+.aside_modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgba(139, 136, 136, 0.4);
+  z-index: 7;
+  transform: translateX(-100%);
+}
+
+.aside_container {
+  background: utility.$bg-clr-menu;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  overflow: scroll;
+  user-select: none;
+  transform: translateX(-100%);
+  transition: transform ease-in-out 300ms;
+  padding-bottom: 1.5rem;
+}
+
+.aside_header {
+  padding: 0 1rem;
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  background-image: url("../../assets//imgs/header-bg.png");
+  background-repeat: repeat-x;
+  background-size: cover;
+  svg {
+    font-size: 1.4rem;
+    margin-left: auto;
+    fill: #fff;
+    cursor: pointer;
+  }
+}
+
+.aside_navigation {
+  list-style: none;
+  margin-top: 0.8rem;
+}
+
+.aside_imdb_pro,
+.aside_language_change {
+  padding: 0 1rem;
+  @include utility.horizontalFlex();
+  justify-content: space-between;
+  margin-top: 1.2rem;
+  cursor: pointer;
+  svg {
+    color: utility.$clr-input-placeholder;
+  }
+
+  &:hover svg {
+    color: #fff;
+  }
+}
+
+.imdb_pro_title {
+  color: #fff;
+  span {
+    font-weight: 600;
+    letter-spacing: -1.2px;
+  }
+  p {
+    text-transform: capitalize;
+    margin-top: 0.2rem;
+  }
+}
+
+.aside_language_title {
+  span {
+    color: utility.$clr-input-placeholder;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+  }
+  p {
+    color: #fff;
+    margin-top: 0.2rem;
+  }
+}

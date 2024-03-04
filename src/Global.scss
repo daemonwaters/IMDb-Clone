@@ -1,14 +1,15 @@
-@use './StyleGuide' as utility;
+@use "./StyleGuide" as utility;
 
-* , *::after , *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: utility.$font-family ;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: utility.$font-family;
 }
 
-.wrapper{
-    width: 100vw;
-    position: relative;
+.wrapper {
+  width: 100vw;
+  position: relative;
 }
-

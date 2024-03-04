@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useHoverOutSide } from "../../hooks/useHoverOutSide";
 import { FaSearch, FaBars } from "react-icons/fa";
 import { MdArrowDropDown, MdArrowDropUp, MdAddToPhotos } from "react-icons/md";
 import Logo from "../../assets/svgs/logo.svg";
@@ -9,12 +10,13 @@ import DropDownSearchCategory from "../dropDownSearchCategory/DropDownSearchCate
 import DropDownLanguage from "../dropDownLanguage/DropDownLanguage";
 import SearchBarMobile from "../searchBarMobile/SearchBarMobile";
 
-function Navbar({ handleMenuDisplay }) {
+function Navbar({ setShowMenu, setShowSideBar }) {
   const [showCategoryDropDown, setCategoryDropDown] = useState(false);
   const [showLanguageDropDown, setShowLanguageDropDown] = useState(false);
   const [breakPoint, setBreakPoint] = useState(false);
   const [searchBreakPoint, setSearchBreakPoint] = useState(false);
   const [showSearchBarMobile, setShowSearchBarMobile] = useState(false);
+  const { ref } = useHoverOutSide(setShowLanguageDropDown);
 
   useEffect(() => {
     const handleBreakPoint = () => {
@@ -66,13 +68,21 @@ function Navbar({ handleMenuDisplay }) {
     }
   };
 
+  const handleMenuSwitch = () => {
+    if (breakPoint) {
+      setShowSideBar(true);
+    } else {
+      setShowMenu(true);
+    }
+  };
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbar_wrapper}>
         {breakPoint ? (
           <>
             <PrimaryButton
-              onClick={handleMenuDisplay}
+              onClick={handleMenuSwitch}
               hasIcon={true}
               icon={<FaBars />}
             >
@@ -88,7 +98,7 @@ function Navbar({ handleMenuDisplay }) {
               <img src={Logo} alt="imdb logo" />
             </div>
             <PrimaryButton
-              onClick={handleMenuDisplay}
+              onClick={handleMenuSwitch}
               hasIcon={true}
               icon={<FaBars />}
             >
@@ -150,7 +160,7 @@ function Navbar({ handleMenuDisplay }) {
             use app
           </PrimaryButton>
         ) : (
-          <div className={styles.language_wrapper}>
+          <div ref={ref} className={styles.language_wrapper}>
             <PrimaryButton onClick={handleLanguageDropDown}>
               En
               <span></span>

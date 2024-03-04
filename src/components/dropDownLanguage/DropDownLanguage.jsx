@@ -4,7 +4,7 @@ import styles from "./DropDownLanguage.module.scss";
 import { languagesDropDownData } from "../dropDownLanguage/languages";
 import DropDownRow from "./DropDownRow";
 
-function DropDownLanguage() {
+function DropDownLanguage({}) {
   return (
     <div className={styles.dropDownLanguage}>
       <span className={styles.language_dropdown_heading}>fully supported</span>

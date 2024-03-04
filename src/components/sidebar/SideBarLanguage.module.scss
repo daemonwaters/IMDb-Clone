@@ -1,0 +1,35 @@
+@use "../../StyleGuide" as utility;
+
+.sidebar_language {
+  position: absolute;
+  top: 56px;
+  left: 0;
+  width: 100%;
+  z-index: 6;
+  background: utility.$bg-clr-menu;
+  transform: translateX(-100%);
+  transition: transform ease-in-out 250ms;
+  ul {
+    list-style: none;
+  }
+}
+
+.sidebar_language_heading {
+  padding: 1rem 0;
+  padding-left: 0.8rem;
+  color: #fff;
+  display: block;
+  font-weight: 500;
+}
+
+.sidebar_language_supported {
+  padding: 1rem 0;
+  padding-left: 0.8rem;
+  font-size: 0.75rem;
+  display: block;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: utility.$font-weight-button;
+  letter-spacing: 3px;
+  border-top: solid 1px utility.$clr-input-placeholder;
+}
