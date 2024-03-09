@@ -3,6 +3,7 @@ import Navbar from "./components/navbar/Navbar";
 import Menu from "./components/Menu/Menu";
 import SideBar from "./components/sidebar/SideBar";
 import "./Global.scss";
+import Header from "./components/header/Header";
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
@@ -32,6 +33,7 @@ function App() {
         <Menu setShowMenu={setShowMenu} showMenu={showMenu} />
       </div>
       <SideBar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
+      <Header />
     </React.Fragment>
   );
 }

@@ -1,0 +1,55 @@
+@use "../../../StyleGuide" as utility;
+
+.up_next {
+  height: 100%;
+  // width: 30%;
+  width: 30%;
+  padding: 0;
+  display: flex;
+  // flex-grow: 1;
+  flex-direction: column;
+  margin-left: 1rem;
+  @media screen and (max-width:1260px) {
+    min-width: 25%;
+    flex-grow: 1;
+    max-width: 33%;
+  }
+}
+
+.up_next_heading {
+  margin-top: 0.8rem;
+  font-size: utility.$fs-header-upNext;
+  font-weight: utility.$font-weight-section-heading;
+  color: utility.$clr-primary;
+}
+
+.up_next_slider {
+  list-style: none;
+  width: 100%;
+  background: linear-gradient(
+    0deg,
+    transparent 0%,
+    transparent 50%,
+    rgba(var(--ipt-baseAlt-shade3-rgb, 18, 18, 18), 0.7) 78%,
+    rgba(var(--ipt-baseAlt-shade3-rgb, 18, 18, 18), 1) 100%
+  );
+  padding: 1rem;
+  margin-top: 0.8rem;
+  flex: 1;
+  max-height: 83%;
+  overflow-y: hidden;
+}
+
+.browse_trailers{
+  margin-left: 0.8rem;
+  margin-top:0.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #fff;
+  font-size: utility.$fs-header-upNext-title; 
+  &:hover {
+    color: utility.$clr-primary;
+  }
+}

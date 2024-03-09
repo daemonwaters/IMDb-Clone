@@ -38,7 +38,8 @@
     line-height: 18px;
     font-weight: utility.$font-weight-button;
     letter-spacing: 1px;
-    border: solid 1px utility.$clr-input-placeholder;
+    border-top: solid 1px utility.$clr-input-placeholder;
+    border-bottom: solid 1px utility.$clr-input-placeholder;
 
     svg {
       margin-left: auto;

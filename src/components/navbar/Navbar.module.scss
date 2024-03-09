@@ -9,7 +9,6 @@
 }
 
 .navbar_wrapper {
-  // width: min(88%,1250px);
   width: max(90vw, 1250px);
   margin-inline: auto;
   @include utility.horizontalFlex();
@@ -54,6 +53,7 @@
   }
   @media screen and (max-width: 1260px) {
     min-width: max(40%, 495px);
+    //1260 bod
   }
   @media screen and (max-width: 1020px) {
     min-width: min(60%, 650px);
