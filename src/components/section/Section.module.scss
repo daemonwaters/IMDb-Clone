@@ -1,0 +1,27 @@
+@use "../../StyleGuide" as utility;
+
+.section_wrapper {
+  background: #000;
+  width: 100vw;
+  padding: 2rem 0;
+}
+
+.section {
+  width: max(90%, 1250px);
+  margin-inline: auto;
+  padding-left: 2.4rem;
+  @media screen and (max-width: 1260px) {
+    width: max(80%, 1000px);
+  }
+  @media screen and (max-width: 1020px) {
+    width: 100%;
+    padding-left: 1rem;
+  }
+}
+
+.section_heading {
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+  font-size: utility.$fs-section_heading;
+  color: utility.$clr-primary;
+}

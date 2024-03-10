@@ -4,6 +4,8 @@ import Menu from "./components/Menu/Menu";
 import SideBar from "./components/sidebar/SideBar";
 import "./Global.scss";
 import Header from "./components/header/Header";
+import FeaturedToday from "./components/featuredToday/FeaturedToday";
+import SubSection from "./components/subsection/SubSection";
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
@@ -21,9 +23,22 @@ function App() {
       }
     };
 
+    const handleKeyDown = (e) => {
+      if (showMenu && e.key == "Escape") {
+        setShowMenu(false);
+      }
+      if (showSideBar && e.key == "Escape") {
+        setShowSideBar(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("resize", resizeFunc);
 
-    return () => window.removeEventListener("resize", resizeFunc);
+    return () => {
+      window.removeEventListener("resize", resizeFunc);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, [showMenu, showSideBar]);
 
   return (
@@ -34,6 +49,8 @@ function App() {
       </div>
       <SideBar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
       <Header />
+      <FeaturedToday />
+      
     </React.Fragment>
   );
 }

@@ -147,7 +147,7 @@
   border: solid 1px #fff;
   border-radius: 4px;
   padding: 0.3rem;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.4);
   cursor: pointer;
   &:hover svg {
     color: utility.$clr-primary;
@@ -166,7 +166,7 @@
   border: solid 1px #fff;
   border-radius: 4px;
   padding: 0.3rem;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.4);
   cursor: pointer;
   &:hover svg {
     color: utility.$clr-primary;

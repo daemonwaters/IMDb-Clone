@@ -1,0 +1,44 @@
+@use "../../StyleGuide" as utility;
+
+.subsection {
+  width: inherit;
+}
+
+.subsection_heading {
+  @include utility.horizontalFlex();
+  gap: 1rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 0.6rem;
+  h3 {
+    font-size: utility.$fs-subsection-heading;
+    color: #fff;
+    font-weight: utility.$font-weight-section-heading;
+    text-transform: capitalize;
+  }
+
+  svg {
+    font-size: 1.3rem;
+    color: #fff;
+  }
+
+  &:hover svg {
+    color: utility.$clr-primary;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    background: utility.$clr-primary;
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    border-radius: 10px;
+  }
+}
+
+.subsection_subheading {
+  margin: 0.6rem 0;
+}

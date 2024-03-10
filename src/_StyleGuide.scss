@@ -1,40 +1,35 @@
 /*font variables*/
 
-$font-family : "Roboto", Helvetica, sans-serif;
-$font-weight-button : 500;
+$font-family: "Roboto", Helvetica, sans-serif;
+$font-weight-button: 500;
 $font-weight-section-heading: 600;
-$fs-navbar-button : 0.875rem;
+$fs-navbar-button: 0.875rem;
 $fs-header-title: 2rem;
 $fs-header-subtitle: 1.25rem;
 $fs-header-upNext: 1.25rem;
-$fs-header-upNext-title:1rem;
+$fs-header-upNext-title: 1rem;
 $fs-header-upNext-subtitle: 0.875rem;
 $fs-section-heading: 2rem;
-$fs-section-subsection-heading:1.5rem;
-$fs-section-subsection-subheading:1rem;
-$fs-section-slider-link: 1rem;
-$fs-section-card-title: 1rem ;
-$fs-section-card-btn:0.875rem ;
+$fs-subsection-heading: 1.5rem;
+$fs-subsection-subheading: 1rem;
+$fs-slide-heading: 1rem;
+$fs-slide-link: 1rem;
+$fs-movie-card-title: 1rem;
+$fs-movie-card-btn: 0.875rem;
 $fs-section-card-rating: 1rem;
-$fs-footer-link:1rem;
-
-
+$fs-footer-link: 1rem;
 
 /*color variables*/
 $clr-primary: rgb(245, 197, 24);
 $clr-secondary: rgb(255, 255, 255);
-$clr-light-blue : rgb(87, 153, 239);
+$clr-light-blue: rgb(87, 153, 239);
 $clr-input-placeholder: #757575;
-$bg-clr-navbar : rgb(18, 18, 18);
-$bg-clr-card :rgb(26, 26, 26);
-$bg-clr-category-dropdown : rgb(49, 49, 49);
-$bg-clr-menu:rgb(31, 31, 31);
-
-
-
+$bg-clr-navbar: rgb(18, 18, 18);
+$bg-clr-card: rgb(26, 26, 26);
+$bg-clr-category-dropdown: rgb(49, 49, 49);
+$bg-clr-menu: rgb(31, 31, 31);
 
 @mixin horizontalFlex() {
-    display: flex;
-    align-items: center;
-  
+  display: flex;
+  align-items: center;
 }

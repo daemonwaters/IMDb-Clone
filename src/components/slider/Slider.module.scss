@@ -1,0 +1,57 @@
+@use "../../StyleGuide" as utility;
+
+.slider_wrapper {
+  max-width: 70%;
+  overflow: hidden;
+  position: relative;
+  @media screen and (max-width: 1020px) {
+    min-width: 100%;
+  }
+}
+
+.slider {
+  width: 100%;
+  @include utility.horizontalFlex();
+  transition: transform ease-in-out 700ms;
+}
+
+.prev_button {
+  position: absolute;
+  top: 33%;
+  left: 0;
+  border: solid 1px #fff;
+  border-radius: 4px;
+  padding: 0.3rem;
+  background: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  outline: none;
+  transition: opacity ease 800ms;
+  &:hover svg {
+    color: utility.$clr-primary;
+  }
+
+  svg {
+    font-size: 2.5rem;
+    color: #fff;
+  }
+}
+
+.next_button {
+  position: absolute;
+  top: 33%;
+  right: 0;
+  border: solid 1px #fff;
+  border-radius: 4px;
+  padding: 0.3rem;
+  background: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  outline: none;
+  transition: opacity ease 800ms;
+  &:hover svg {
+    color: utility.$clr-primary;
+  }
+  svg {
+    font-size: 2.5rem;
+    color: #fff;
+  }
+}

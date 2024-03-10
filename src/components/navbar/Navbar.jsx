@@ -42,17 +42,29 @@ function Navbar({ setShowMenu, setShowSideBar }) {
         setSearchBreakPoint(true);
       } else {
         setSearchBreakPoint(false);
+        if (showSearchBarMobile) {
+          setShowSearchBarMobile(false);
+        }
+      }
+    };
+    //remember to review this later []
+
+    const handleKeyDown = (e) => {
+      if (e.key == "Escape") {
+        setShowSearchBarMobile(false);
       }
     };
 
+    window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("resize", handleBreakPoint);
     window.addEventListener("load", handleBreakPoint);
 
     return () => {
       window.removeEventListener("resize", handleBreakPoint);
       window.removeEventListener("load", handleBreakPoint);
+      window.removeEventListener("kedown", handleKeyDown);
     };
-  }, []);
+  }, [showSearchBarMobile]);
 
   const handleCategoryDropDown = () => {
     setCategoryDropDown(!showCategoryDropDown);

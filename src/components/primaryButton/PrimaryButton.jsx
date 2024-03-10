@@ -1,12 +1,17 @@
 import React from "react";
 import styles from "./PrimaryButton.module.scss";
 
-function PrimaryButton({ children, hasIcon, icon , onClick , style }) {
+function PrimaryButton({ children, hasIcon, icon, onClick, style }) {
   return (
     <div className={styles.wrapper}>
-      <button style={style ? style : {}} onClick={onClick} className={styles.primaryButton}>
+      <button
+        style={style ? style : {}}
+        onClick={onClick}
+        className={styles.primaryButton}
+      >
         {hasIcon ? icon : null}
         {children}
+        <span></span>
       </button>
     </div>
   );

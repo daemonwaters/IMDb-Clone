@@ -1,0 +1,92 @@
+@use "../../../StyleGuide" as utility;
+
+.movieCard {
+  min-width: calc(100% / 6 - 16px);
+  background: utility.$bg-clr-card;
+  @media screen and (max-width: 1020px) {
+    min-width: calc(100% / 4 - 16px);
+  }
+  @media screen and (max-width: 600px) {
+    min-width: calc(100% / 2.5 - 16px);
+  }
+}
+
+.card_img {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  img {
+    width: 100%;
+    aspect-ratio: 5/7;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  svg {
+    position: absolute;
+    top: -0.7%;
+    left: -2%;
+    font-size: 2rem;
+    fill: #fff;
+    cursor: pointer;
+
+    &:hover {
+      fill: #333;
+    }
+  }
+}
+
+.card_info {
+  padding: 0.4rem 0.3rem;
+}
+
+.rating {
+  @include utility.horizontalFlex();
+  gap: 0.2rem;
+  color: #fff;
+  svg:first-of-type {
+    color: utility.$clr-primary;
+  }
+
+  svg:last-of-type {
+    margin-left: 1.3rem;
+    color: utility.$clr-light-blue;
+    cursor: pointer;
+  }
+}
+
+.card_title {
+  text-transform: capitalize;
+  color: #fff;
+  font-size: utility.$fs-movie-card-title;
+  display: inline-block;
+  margin: 0.6rem 0 1.5rem 0;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.card_footer {
+  @include utility.horizontalFlex();
+  justify-content: space-around;
+  margin-top: 0.5rem;
+}
+
+.info_sign {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    color: #fff;
+    font-size: 1.2rem;
+  }
+
+  &:hover {
+    background: rgba(81, 79, 79, 0.3);
+  }
+}

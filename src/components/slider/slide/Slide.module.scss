@@ -1,0 +1,43 @@
+@use "../../../StyleGuide" as utility;
+
+.slide {
+  min-width: 50%;
+  @media screen and (max-width: 600px) {
+    min-width: 100%;
+  }
+}
+
+.slide_img {
+  width: 98%;
+  cursor: pointer;
+  img {
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+}
+
+.slide_info {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.slide_heading {
+  text-transform: capitalize;
+  color: #fff;
+  font-size: utility.$fs-slide-heading;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.slide_link {
+  color: utility.$clr-light-blue;
+  font-size: utility.$fs-slide-link;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
