@@ -1,24 +1,22 @@
 @use "../../StyleGuide" as utility;
 
 .slider_wrapper {
-  max-width: 70%;
+  width: 100%;
   overflow: hidden;
   position: relative;
-  @media screen and (max-width: 1020px) {
-    min-width: 100%;
-  }
 }
 
 .slider {
   width: 100%;
   @include utility.horizontalFlex();
+  padding: 0.1rem 0;
   transition: transform ease-in-out 700ms;
 }
 
 .prev_button {
+  position: absolute;
   top: 33%;
   left: 0;
-  position: absolute;
   border: solid 1px #fff;
   border-radius: 4px;
   padding: 0.3rem;

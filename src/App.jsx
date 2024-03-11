@@ -6,6 +6,7 @@ import "./Global.scss";
 import Header from "./components/header/Header";
 import FeaturedToday from "./components/featuredToday/FeaturedToday";
 import SubSection from "./components/subsection/SubSection";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
@@ -50,7 +51,7 @@ function App() {
       <SideBar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
       <Header />
       <FeaturedToday />
-      
+      {/* <Footer/> */}
     </React.Fragment>
   );
 }

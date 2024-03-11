@@ -1,0 +1,43 @@
+@use "../../../StyleGuide" as utility;
+
+.boxOffice_row {
+  width: 100%;
+  @include utility.horizontalFlex();
+  gap: 0.5rem;
+  padding: 0.2rem;
+  svg {
+    font-size: 2rem;
+    color: #6b6767;
+    cursor: pointer;
+  }
+}
+
+.row_index {
+  position: relative;
+  padding-right: 0.5rem;
+  color: #fff;
+  &::after {
+    position: absolute;
+    content: "";
+    background: utility.$clr-primary;
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+  }
+}
+
+.row_info {
+  cursor: pointer;
+  flex: 1;
+}
+
+.row_title {
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.row_value {
+  font-size: 0.8rem;
+  color: #8f8f8f;
+}

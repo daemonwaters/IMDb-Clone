@@ -1,0 +1,98 @@
+@use "../../StyleGuide" as utility;
+
+.footer {
+  width: 100%;
+  background: #000;
+  @include utility.horizontalFlex();
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signIn {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  padding: 1rem 0;
+  button {
+    background: utility.$clr-primary;
+    color: #000;
+    margin: 0 auto;
+    &:hover {
+      background: darken(utility.$clr-primary, 5%);
+    }
+
+    @media screen and (max-width: 1020px) {
+      background: #262b33;
+      color: utility.$clr-light-blue;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      &:hover {
+        background: darken(#262b33, 5%);
+      }
+    }
+
+    span {
+      display: none;
+      //the layer inside button
+    }
+  }
+
+  @media screen and (max-width: 1020px) {
+    background: #0f0f0f;
+  }
+}
+
+.get_app {
+  width: 100%;
+  padding: 1rem 0;
+  background: #1a1a1a;
+  button {
+    background: utility.$clr-primary;
+    color: #000;
+    margin: 0 auto;
+    &:hover {
+      background: darken(utility.$clr-primary, 5%);
+    }
+
+    span {
+      display: none;
+    }
+  }
+}
+
+.socails {
+  svg {
+    margin: 0 1.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+  }
+}
+
+.links {
+  width: 70%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  span {
+    cursor: pointer;
+    padding: 0.8rem;
+    color: #fff;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.copy_rights {
+  margin: 1rem 0;
+  font-size: 0.8rem;
+  color: #b3b3b3;
+}

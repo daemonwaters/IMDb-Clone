@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import styles from "./Slider.module.scss";
-import Slide from "./slide/Slide";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import MovieCard from "./movieCard/MovieCard";
+import styles from "./BirthdaySlider.module.scss";
+import BirthdayCard from "./birthdayCard/BirthdayCard";
 
-function Slider({ sliderType }) {
+function BirthdaySlider() {
   const [swiper, setSwiper] = useState(0);
 
   const handleNext = () => {
@@ -16,27 +15,21 @@ function Slider({ sliderType }) {
   };
 
   return (
-    <div
-      style={{ maxWidth: sliderType == "fullwidth" ? "100%" : "70%" }}
-      className={styles.slider_wrapper}
-    >
+    <div className={styles.slider_wrapper}>
       <div
-        style={{
-          transform: `translateX(${swiper * 100}%)`,
-          gap: sliderType == "fullwidth" ? "1rem" : "0",
-        }}
+        style={{ transform: `translateX(${swiper * 100}%)` }}
         className={styles.slider}
       >
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
+        <BirthdayCard />
+        <BirthdayCard />
+        <BirthdayCard />
+        <BirthdayCard />
+        <BirthdayCard />
+        <BirthdayCard />
+        <BirthdayCard />
+        <BirthdayCard />
+        <BirthdayCard />
+        <BirthdayCard />
       </div>
       <button
         style={{ opacity: swiper == 0 ? 0 : 1 }}
@@ -57,4 +50,4 @@ function Slider({ sliderType }) {
   );
 }
 
-export default Slider;
+export default BirthdaySlider;
