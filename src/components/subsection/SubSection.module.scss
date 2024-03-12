@@ -2,6 +2,7 @@
 
 .subsection {
   width: inherit;
+  margin-bottom: 2rem;
 }
 
 .subsection_heading {
@@ -10,6 +11,7 @@
   cursor: pointer;
   position: relative;
   padding-left: 0.6rem;
+  margin-bottom: 1rem;
   h3 {
     font-size: utility.$fs-subsection-heading;
     color: #fff;
@@ -39,5 +41,6 @@
 }
 
 .subsection_subheading {
-  margin: 0.6rem 0;
+  margin-bottom: 1rem;
+  color: #b3b3b3;
 }

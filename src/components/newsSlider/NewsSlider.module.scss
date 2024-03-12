@@ -1,0 +1,47 @@
+@import url("../birthdaySlider/BirthdaySlider.module.scss");
+
+.news_slide {
+  min-width: calc(100% / 3 - 16px);
+  height: 133px;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+  margin: 0 0.5rem;
+
+  img {
+    width: 90px;
+    height: 133px;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  @media screen and (max-width: 1020px) {
+    min-width: calc(100% / 2.5 - 16px);
+  }
+  @media screen and (max-width: 600px) {
+    min-width: calc(100% / 1.2 - 16px);
+  }
+}
+
+.news_content {
+  padding-top: 0.2rem;
+  flex: 1;
+  height: 100%;
+}
+
+.news_paragraph {
+  color: #fff;
+  margin-bottom: 0.2rem;
+  @media screen and (max-width: 680px) {
+    font-size: 0.8rem;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 1rem;
+  }
+}
+
+.date {
+  color: #fff;
+  font-size: 0.8rem;
+}

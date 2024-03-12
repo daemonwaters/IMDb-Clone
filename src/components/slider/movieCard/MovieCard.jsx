@@ -9,7 +9,7 @@ import PrimaryButton from "../../primaryButton/PrimaryButton";
 import { FiPlus } from "react-icons/fi";
 import { IoPlay } from "react-icons/io5";
 
-function MovieCard() {
+function MovieCard({ hasInfo }) {
   const buttonStyle = {
     justifyContent: "center",
     width: "100%",
@@ -37,9 +37,13 @@ function MovieCard() {
           <PrimaryButton hasIcon={true} icon={<IoPlay />}>
             trailer
           </PrimaryButton>
-          <span title="More information" className={styles.info_sign}>
-            <IoMdInformationCircleOutline />
-          </span>
+          {hasInfo ? (
+            <span title="More information" className={styles.info_sign}>
+              <IoMdInformationCircleOutline />
+            </span>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </div>

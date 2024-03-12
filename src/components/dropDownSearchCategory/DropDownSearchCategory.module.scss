@@ -4,8 +4,8 @@
   position: absolute;
   top: 110%;
   left: 0;
-  // width: max(235px,25%);
   width: 215px;
+  z-index: 3;
 
   ul {
     list-style: none;

@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styles from "./SlideShow.module.scss";
-import placeholder from "../../../assets/imgs/placeholder.jpg";
-import placeholderPoster from "../../../assets/imgs/placeholder-poster.jpg";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
-import { BsPlayCircle } from "react-icons/bs";
-import { BsBookmarkPlus } from "react-icons/bs";
+import SlideUnit from "./SlideUnit";
 
 function SlideShow() {
   const [removeSwipers, setRemoveSwipers] = useState(false);
+  const [swiper, setSwiper] = useState(0);
 
   useEffect(() => {
     const handleRemove = () => {
@@ -26,35 +24,30 @@ function SlideShow() {
     };
   }, []);
 
+  const handleNext = () => {
+    setSwiper((prv) => (prv !== -3 ? prv - 1 : prv == 0));
+  };
+
+  const handlePrevious = () => {
+    setSwiper((prv) => (prv !== 0 ? prv + 1 : 0));
+  };
+
   return (
     <div className={styles.slideShow}>
-      <img
-        className={styles.slideShow_img}
-        src={placeholder}
-        alt="movie cover"
-      />
-      <div className={styles.slider_info}>
-        <div className={styles.movie_poster}>
-          <img src={placeholderPoster} alt="movie poster" />
-          <BsBookmarkPlus />
-        </div>
-        <div className={styles.movie_info}>
-          <BsPlayCircle />
-          <div>
-            <span className={styles.movie_title}>
-              Andrew Scott Is the New Tom 'Ripley'
-            </span>
-            <span className={styles.movie_subtitle}>Watch the Trailer</span>
-          </div>
-          <span className={styles.duration}>2:08</span>
-        </div>
+      <div
+        style={{ transform: `translateX(${swiper * 100}%)` }}
+        className={styles.slider}
+      >
+        <SlideUnit />
+        <SlideUnit />
+        <SlideUnit />
       </div>
       {!removeSwipers ? (
         <>
-          <span className={styles.prev_button}>
+          <span onClick={handlePrevious} className={styles.prev_button}>
             <IoIosArrowBack />
           </span>
-          <span className={styles.next_button}>
+          <span onClick={handleNext} className={styles.next_button}>
             <IoIosArrowForward />
           </span>
         </>

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import styles from "./Slider.module.scss";
-import Slide from "./slide/Slide";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import MovieCard from "./movieCard/MovieCard";
 
-function Slider({ sliderType }) {
+
+function Slider({ sliderType, children }) {
   const [swiper, setSwiper] = useState(0);
 
   const handleNext = () => {
@@ -27,16 +26,7 @@ function Slider({ sliderType }) {
         }}
         className={styles.slider}
       >
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
+        {children}
       </div>
       <button
         style={{ opacity: swiper == 0 ? 0 : 1 }}

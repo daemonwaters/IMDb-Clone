@@ -12,5 +12,26 @@
 .wrapper {
   width: 100vw;
   position: relative;
-  overflow-y: hidden;
+}
+
+.backtop {
+  position: fixed;
+  z-index: 7;
+  top: 5%;
+  left: 50%;
+  transition: transform ease 500ms;
+  background: #f0f0f0;
+  width: 125px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 20px;
+
+  &:hover {
+    background: darken(#f0f0f0, 10%);
+  }
 }

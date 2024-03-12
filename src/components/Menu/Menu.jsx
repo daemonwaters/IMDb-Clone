@@ -8,7 +8,7 @@ import MenuColumn from "./MenuColumn/MenuColumn";
 function Menu({ showMenu, setShowMenu }) {
   return createPortal(
     <section
-      style={{ transform: showMenu ? "translateY(0)" : "translateY(-100%)" }}
+      style={{ transform: showMenu ? "translateY(0)" : "translateY(-300%)" }}
       className={styles.portal}
     >
       <div className={styles.menu}>

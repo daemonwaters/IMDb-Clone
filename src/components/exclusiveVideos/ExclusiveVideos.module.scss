@@ -1,0 +1,9 @@
+.slide_wrapper {
+  min-width: calc(100% / 3);
+  @media screen and (max-width: 1020px) {
+    min-width: 50%;
+  }
+  @media screen and (max-width: 600px) {
+    min-width: 100%;
+  }
+}

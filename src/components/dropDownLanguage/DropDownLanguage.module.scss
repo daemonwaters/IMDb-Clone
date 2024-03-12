@@ -1,6 +1,7 @@
 @use "../../StyleGuide" as utility;
 
 .dropDownLanguage {
+  z-index: 3;
   position: absolute;
   top: 100%;
   right: 0;

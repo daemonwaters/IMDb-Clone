@@ -10,6 +10,7 @@
 .slide_img {
   width: 98%;
   cursor: pointer;
+  position: relative;
   img {
     width: 100%;
     aspect-ratio: 16/9;
@@ -18,6 +19,22 @@
 
 .slide_info {
   margin-top: 0.5rem;
+  display: flex;
+  gap: 0.3rem;
+
+  svg {
+    color: #6b6767;
+    font-size: 2rem;
+    margin-top: 0.2rem;
+    cursor: pointer;
+
+    &:hover {
+      color: lighten(#6b6767, 10%);
+    }
+  }
+}
+
+.frag {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
