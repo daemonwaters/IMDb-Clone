@@ -12,7 +12,7 @@ function useHoverOutSide(handler) {
     window.addEventListener("mouseover", handleMouseOver);
     return () => window.removeEventListener("mouseover", handleMouseOver);
   }, []);
-  
+
   return { ref };
 }
 

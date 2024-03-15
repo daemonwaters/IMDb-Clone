@@ -4,9 +4,8 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import SlideUnit from "./SlideUnit";
 
-function SlideShow() {
+function SlideShow({ movies, swiper, handleNext, handlePrevious }) {
   const [removeSwipers, setRemoveSwipers] = useState(false);
-  const [swiper, setSwiper] = useState(0);
 
   useEffect(() => {
     const handleRemove = () => {
@@ -24,23 +23,15 @@ function SlideShow() {
     };
   }, []);
 
-  const handleNext = () => {
-    setSwiper((prv) => (prv !== -3 ? prv - 1 : prv == 0));
-  };
-
-  const handlePrevious = () => {
-    setSwiper((prv) => (prv !== 0 ? prv + 1 : 0));
-  };
-
   return (
     <div className={styles.slideShow}>
       <div
         style={{ transform: `translateX(${swiper * 100}%)` }}
         className={styles.slider}
       >
-        <SlideUnit />
-        <SlideUnit />
-        <SlideUnit />
+        {movies?.map((movie) => {
+          return <SlideUnit key={movie.id} movie={movie} />;
+        })}
       </div>
       {!removeSwipers ? (
         <>

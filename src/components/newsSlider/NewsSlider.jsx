@@ -7,7 +7,7 @@ function NewsSlider() {
   const [swiper, setSwiper] = useState(0);
 
   const handleNext = () => {
-    setSwiper((prv) => (prv !== -1 ? prv - 1 : prv == 0));
+    setSwiper((prv) => (prv !== -1 ? prv - 1 : 0));
   };
 
   const handlePrevious = () => {

@@ -2,31 +2,30 @@ import React from "react";
 import styles from "./SlideUnit.module.scss";
 import { BsPlayCircle } from "react-icons/bs";
 import { BsBookmarkPlus } from "react-icons/bs";
-import placeholder from "../../../assets/imgs/placeholder.jpg";
-import placeholderPoster from "../../../assets/imgs/placeholder-poster.jpg";
 
-function SlideUnit() {
+function SlideUnit({ movie }) {
   return (
     <div className={styles.slide}>
       <img
         className={styles.slideShow_img}
-        src={placeholder}
+        src={`${import.meta.env.VITE_BASE_URL}${movie.backdrop_path}`}
         alt="movie cover"
       />
       <div className={styles.slider_info}>
         <div className={styles.movie_poster}>
-          <img src={placeholderPoster} alt="movie poster" />
+          <img
+            src={`${import.meta.env.VITE_BASE_URL}${movie.poster_path}`}
+            alt="movie poster"
+          />
           <BsBookmarkPlus />
         </div>
         <div className={styles.movie_info}>
           <BsPlayCircle />
           <div>
-            <span className={styles.movie_title}>
-              Andrew Scott Is the New Tom 'Ripley'
-            </span>
+            <span className={styles.movie_title}>{movie.title}</span>
             <span className={styles.movie_subtitle}>Watch the Trailer</span>
           </div>
-          <span className={styles.duration}>2:08</span>
+          <span className={styles.duration}>3:05</span>
         </div>
       </div>
     </div>

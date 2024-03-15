@@ -21,19 +21,24 @@
   padding: 1rem 0;
   button {
     background: utility.$clr-primary;
-    color: #000;
     margin: 0 auto;
     &:hover {
       background: darken(utility.$clr-primary, 5%);
     }
 
+    a {
+      color: #000;
+    }
+
     @media screen and (max-width: 1020px) {
       background: #262b33;
-      color: utility.$clr-light-blue;
       padding-left: 1.5rem;
       padding-right: 1.5rem;
       &:hover {
         background: darken(#262b33, 5%);
+      }
+      a {
+        color: utility.$clr-light-blue;
       }
     }
 

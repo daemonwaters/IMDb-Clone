@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import styles from "./BirthdaySlider.module.scss";
 import BirthdayCard from "./birthdayCard/BirthdayCard";
+import { useGetMovies } from "../../hooks/useGetMovies";
 
 function BirthdaySlider() {
   const [swiper, setSwiper] = useState(0);
+  const { data: people } = useGetMovies(
+    import.meta.env.VITE_BORN_TODAY_URL,
+    12
+  );
 
   const handleNext = () => {
-    setSwiper((prv) => (prv !== -3 ? prv - 1 : prv == 0));
+    setSwiper((prv) => (prv !== -1 ? prv - 1 : 0));
   };
 
   const handlePrevious = () => {
@@ -20,16 +25,15 @@ function BirthdaySlider() {
         style={{ transform: `translateX(${swiper * 100}%)` }}
         className={styles.slider}
       >
-        <BirthdayCard />
-        <BirthdayCard />
-        <BirthdayCard />
-        <BirthdayCard />
-        <BirthdayCard />
-        <BirthdayCard />
-        <BirthdayCard />
-        <BirthdayCard />
-        <BirthdayCard />
-        <BirthdayCard />
+        {people?.map((person) => {
+          return (
+            <BirthdayCard
+              key={person.id}
+              name={person.name}
+              profile={person.profile_path}
+            />
+          );
+        })}
       </div>
       <button
         style={{ opacity: swiper == 0 ? 0 : 1 }}
@@ -39,8 +43,8 @@ function BirthdaySlider() {
         <IoIosArrowBack />
       </button>
       <button
-        disabled={swiper == -3 ? true : false}
-        style={{ opacity: swiper == -3 ? 0 : 1 }}
+        disabled={swiper == -1 ? true : false}
+        style={{ opacity: swiper == -1 ? 0 : 1 }}
         onClick={handleNext}
         className={styles.next_button}
       >

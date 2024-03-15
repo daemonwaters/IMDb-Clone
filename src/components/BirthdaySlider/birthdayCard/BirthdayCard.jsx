@@ -1,16 +1,17 @@
 import React from "react";
 import styles from "./BirthdayCard.module.scss";
-import birthdayplaceholder from "../../../assets/imgs/bdplaceholder.jpg";
 
-function BirthdayCard() {
+function BirthdayCard({ name, profile }) {
   return (
     <div className={styles.birthdayCard}>
       <div className={styles.img_layer}>
-        <img src={birthdayplaceholder} alt="actor x" />
+        <img src={`${import.meta.env.VITE_BASE_URL}${profile}`} alt={name} />
       </div>
       <div className={styles.info}>
-        <span className={styles.name}>Jodie Comer</span>
-        <span className={styles.age}>31</span>
+        <span className={styles.name}>{name}</span>
+        <span className={styles.age}>
+          {Math.floor(Math.random() * 50)}
+        </span>
       </div>
     </div>
   );

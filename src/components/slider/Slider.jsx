@@ -1,18 +1,51 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Slider.module.scss";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-
-function Slider({ sliderType, children }) {
+function Slider({ sliderType, children, length, slidePerView }) {
   const [swiper, setSwiper] = useState(0);
+  const [disable, setDisable] = useState(false);
 
   const handleNext = () => {
-    setSwiper((prv) => (prv !== -3 ? prv - 1 : prv == 0));
+    if (window.innerWidth <= 600) {
+      setSwiper((prv) =>
+        prv !== Number(`-${length / slidePerView["600"] - 1}`) ? prv - 1 : 0
+      );
+      return;
+    }
+    if (window.innerWidth <= 1020) {
+      setSwiper((prv) =>
+        prv !== Number(`-${length / slidePerView["1020"] - 1}`) ? prv - 1 : 0
+      );
+      return;
+    }
+    setSwiper((prv) =>
+      prv !== Number(`-${length / slidePerView.other - 1}`) ? prv - 1 : 0
+    );
   };
 
   const handlePrevious = () => {
     setSwiper((prv) => (prv !== 0 ? prv + 1 : 0));
   };
+
+  useEffect(() => {
+    if (window.innerWidth <= 600) {
+      swiper == Number(`-${length / slidePerView["600"] - 1}`)
+        ? setDisable(true)
+        : setDisable(false);
+      return;
+    }
+    if (window.innerWidth <= 1020) {
+      swiper == Number(`-${length / slidePerView["1020"] - 1}`)
+        ? setDisable(true)
+        : setDisable(false);
+      return;
+    }
+
+    swiper == Number(`-${length / slidePerView.other - 1}`)
+      ? setDisable(true)
+      : setDisable(false);
+  }, [swiper]);
 
   return (
     <div
@@ -29,6 +62,7 @@ function Slider({ sliderType, children }) {
         {children}
       </div>
       <button
+        disabled={swiper == 0 ? true : false}
         style={{ opacity: swiper == 0 ? 0 : 1 }}
         onClick={handlePrevious}
         className={styles.prev_button}
@@ -36,8 +70,8 @@ function Slider({ sliderType, children }) {
         <IoIosArrowBack />
       </button>
       <button
-        disabled={swiper == -3 ? true : false}
-        style={{ opacity: swiper == -3 ? 0 : 1 }}
+        disabled={disable}
+        style={{ opacity: disable ? 0 : 1 }}
         onClick={handleNext}
         className={styles.next_button}
       >

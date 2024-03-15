@@ -3,18 +3,30 @@ import Section from "../section/Section";
 import Slider from "../slider/Slider";
 import Slide from "../slider/slide/Slide";
 
-function FeaturedToday() {
+function FeaturedToday({ trailers }) {
+  const slidePerView = {
+    "600": 1,
+    "1020": 2,
+    other: 2
+  };
+
   return (
     <Section sectionHeading={"featured today"}>
-      <Slider>
-        <Slide />
-        <Slide />
-        <Slide />
-        <Slide />
-        <Slide />
-        <Slide />
-        <Slide />
-        <Slide />
+      <Slider
+        length={trailers.length}
+        sliderType={"fullwidth"}
+        slidePerView={slidePerView}
+      >
+        {trailers.map((trailer) => {
+          return (
+            <Slide
+              key={trailer.id}
+              hasBookmark={false}
+              trailer={trailer}
+              hasPlayBtn={false}
+            />
+          );
+        })}
       </Slider>
     </Section>
   );

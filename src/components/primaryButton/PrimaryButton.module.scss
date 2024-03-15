@@ -1,47 +1,49 @@
-@use '../../StyleGuide' as utility;
+@use "../../StyleGuide" as utility;
 
-
-.wrapper{
-    position: relative;
+.wrapper {
+  position: relative;
 }
 
+.primaryButton {
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 0.45rem 1rem;
+  margin-bottom: 0.2rem;
+  text-transform: capitalize;
+  background: transparent;
+  color: #fff;
+  font-size: utility.$fs-navbar-button;
+  font-weight: utility.$font-weight-button;
+  cursor: pointer;
+  position: relative;
+  z-index: 4;
+  @include utility.horizontalFlex();
+  gap: 0.3rem;
+  &:hover span {
+    opacity: 0.8;
+  }
 
-.primaryButton{
-    outline: none;
-    border: none;
+  > span {
+    //layer for opacity effect
+    position: absolute;
+    inset: 0;
+    background-color: rgb(37, 37, 37);
     border-radius: 4px;
-    padding:0.45rem 1rem;
-    margin-bottom: 0.2rem;
-    text-transform: capitalize;
-    background: transparent;
+    opacity: 0;
+    z-index: -1;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  svg {
+    font-size: 1.2rem;
+  }
+
+  a {
     color: #fff;
-    font-size: utility.$fs-navbar-button;
-    font-weight: utility.$font-weight-button;
-    cursor: pointer;
-    position: relative;
-    z-index: 4;
-    @include utility.horizontalFlex();
-    gap: 0.3rem;
-    &:hover span {
-        opacity: 0.8;
-    }
-
-    > span {
-        //layer for opacity effect
-        position: absolute;
-        inset: 0;
-        background-color: rgb(37, 37, 37);
-        border-radius: 4px;
-        opacity: 0;
-        z-index: -1;
-
-        &:hover{
-            opacity: 0.8;
-        }
-    }
-
-    svg {
-        font-size: 1.2rem;
-    }
- 
+    text-decoration: none;
+  }
 }

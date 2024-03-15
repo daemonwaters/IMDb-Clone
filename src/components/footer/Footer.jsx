@@ -6,6 +6,7 @@ import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { IoLogoFacebook } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const [btnBreakPoint, setButtonBreakPoint] = useState(false);
@@ -55,7 +56,9 @@ function Footer() {
           <></>
         )}
         <div className={styles.signIn}>
-          <PrimaryButton>Sign in for more access</PrimaryButton>
+          <PrimaryButton>
+            <Link to="/sign-in">Sign in for more access</Link>
+          </PrimaryButton>
         </div>
         <div className={styles.socails}>
           <FaTiktok />

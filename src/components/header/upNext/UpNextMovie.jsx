@@ -1,22 +1,25 @@
 import React from "react";
 import styles from "./UpNextMovie.module.scss";
-import nextUpPlaceholder from "../../../assets/imgs/nextupplaceholder.jpg";
 import { BsPlayCircle } from "react-icons/bs";
 
-function UpNextMovie() {
+function UpNextMovie({ movie }) {
   return (
     <li className={styles.up_next_movie}>
       <div className={styles.next_up_poster}>
-        <img src={nextUpPlaceholder} alt="" />
+        <img
+          src={`${import.meta.env.VITE_BASE_URL}${movie.poster_path}`}
+          alt={movie.title}
+        />
       </div>
       <div className={styles.next_up_movie_info}>
         <BsPlayCircle />
         <span className={styles.next_up_duration}>3:05</span>
         <div>
-          <span className={styles.next_up_title}>
-            Andrew Scott Is the New Tom 'Ripley'
-          </span>
-          <span className={styles.next_up_subtitle}>Watch the Trailer</span>
+          <span className={styles.next_up_title}>{movie.title}</span>
+          <span className={styles.next_up_subtitle}>{`${movie.overview.slice(
+            0,
+            75
+          )} ...`}</span>
         </div>
       </div>
     </li>

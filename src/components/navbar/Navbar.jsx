@@ -9,6 +9,7 @@ import PrimaryButton from "../primaryButton/PrimaryButton";
 import DropDownSearchCategory from "../dropDownSearchCategory/DropDownSearchCategory";
 import DropDownLanguage from "../dropDownLanguage/DropDownLanguage";
 import SearchBarMobile from "../searchBarMobile/SearchBarMobile";
+import { Link } from "react-router-dom";
 
 function Navbar({ setShowMenu, setShowSideBar }) {
   const [showCategoryDropDown, setCategoryDropDown] = useState(false);
@@ -101,13 +102,17 @@ function Navbar({ setShowMenu, setShowSideBar }) {
               <span></span>
             </PrimaryButton>
             <div className={styles.logo}>
-              <img src={Logo} alt="imdb logo" />
+              <Link to="/">
+                <img src={Logo} alt="imdb logo" />
+              </Link>
             </div>
           </>
         ) : (
           <>
             <div className={styles.logo}>
-              <img src={Logo} alt="imdb logo" />
+              <Link to="/">
+                <img src={Logo} alt="imdb logo" />
+              </Link>
             </div>
             <PrimaryButton
               onClick={handleMenuSwitch}
@@ -157,7 +162,7 @@ function Navbar({ setShowMenu, setShowSideBar }) {
           <></>
         )}
         <PrimaryButton>
-          sign in
+          <Link to="/sign-in">sign in</Link>
           <span></span>
         </PrimaryButton>
         {breakPoint ? (

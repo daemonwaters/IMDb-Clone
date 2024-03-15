@@ -8,12 +8,19 @@
 }
 
 .slide_img {
-  width: 98%;
+  width: 95%;
   cursor: pointer;
   position: relative;
   img {
     width: 100%;
     aspect-ratio: 16/9;
+  }
+  svg {
+    position: absolute;
+    bottom: 3%;
+    left: 3%;
+    font-size: 2rem;
+    color: #fff;
   }
 }
 

@@ -5,7 +5,13 @@ import Slider from "../slider/Slider";
 import Slide from "../slider/slide/Slide";
 import styles from "./ExclusiveVideos.module.scss";
 
-function ExclusiveVideos() {
+function ExclusiveVideos({ trailers }) {
+  const slidePerView = {
+    "600": 1,
+    "1020": 2,
+    other: 3,
+  };
+
   return (
     <Section sectionHeading={"Exclusive videos"}>
       <SubSection
@@ -14,25 +20,14 @@ function ExclusiveVideos() {
           "Celebrity interviews, trending entertainment stories, and expert analysis"
         }
       >
-        <Slider sliderType={"fullwidth"}>
-          <div className={styles.slide_wrapper}>
-            <Slide />
-          </div>
-          <div className={styles.slide_wrapper}>
-            <Slide />
-          </div>
-          <div className={styles.slide_wrapper}>
-            <Slide />
-          </div>
-          <div className={styles.slide_wrapper}>
-            <Slide />
-          </div>
-          <div className={styles.slide_wrapper}>
-            <Slide />
-          </div>
-          <div className={styles.slide_wrapper}>
-            <Slide />
-          </div>
+        <Slider length={trailers.length} sliderType={"fullwidth"} slidePerView={slidePerView}>
+          {trailers.map((trailer) => {
+            return (
+              <div key={trailer.id} className={styles.slide_wrapper}>
+                <Slide hasBookmark={true} trailer={trailer} hasPlayBtn={true} />
+              </div>
+            );
+          })}
         </Slider>
       </SubSection>
     </Section>

@@ -4,12 +4,11 @@ import { GoBookmarkFill } from "react-icons/go";
 import { AiOutlineStar } from "react-icons/ai";
 import { AiFillStar } from "react-icons/ai";
 import { IoMdInformationCircleOutline } from "react-icons/io";
-import movieCardPlaceHolder from "../../../assets/imgs/moviecardplaceholder.jpg";
 import PrimaryButton from "../../primaryButton/PrimaryButton";
 import { FiPlus } from "react-icons/fi";
 import { IoPlay } from "react-icons/io5";
 
-function MovieCard({ hasInfo }) {
+function MovieCard({ hasInfo, movie }) {
   const buttonStyle = {
     justifyContent: "center",
     width: "100%",
@@ -20,16 +19,21 @@ function MovieCard({ hasInfo }) {
   return (
     <div className={styles.movieCard}>
       <div className={styles.card_img}>
-        <img src={movieCardPlaceHolder} alt="random card" />
+        <img
+          src={`${import.meta.env.VITE_BASE_URL}${movie.poster_path}`}
+          alt={movie.title}
+        />
         <GoBookmarkFill />
       </div>
       <div className={styles.card_info}>
         <span className={styles.rating}>
           <AiFillStar />
-          7.9
+          {movie.vote_average
+            .toFixed(1)
+            .replace(/([0-9]+(\.[0-9]+[1-9])?)(\.?0+$)/, "$1")}
           <AiOutlineStar />
         </span>
-        <span className={styles.card_title}>Tianic</span>
+        <span className={styles.card_title}>{movie.title}</span>
         <PrimaryButton style={buttonStyle} hasIcon={true} icon={<FiPlus />}>
           watchlist
         </PrimaryButton>
